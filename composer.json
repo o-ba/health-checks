@@ -36,9 +36,6 @@
 			"extension-key": "health_checks"
 		}
 	},
-	"replace": {
-		"health-checks": "self.version"
-	},
 	"autoload": {
 		"psr-4": {
 			"Bo\\HealthChecks\\": "Classes"
