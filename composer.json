@@ -37,7 +37,7 @@
 		}
 	},
 	"replace": {
-		"health_checks": "self.version"
+		"health-checks": "self.version"
 	},
 	"autoload": {
 		"psr-4": {
