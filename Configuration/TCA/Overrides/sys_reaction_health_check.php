@@ -37,7 +37,7 @@ $GLOBALS['TCA']['sys_reaction']['ctrl']['typeicon_classes'][\Bo\HealthChecks\Hea
         ],
         'checks' => [
             'label' => 'LLL:EXT:health_checks/Resources/Private/Language/locallang_db.xlf:sys_reaction.health_checks.checks',
-            'description' => 'LLL:EXT:health_checks/Resources/Private/Language/locallang_db.xlf:sys_reaction.health_checks.checks',
+            'description' => 'LLL:EXT:health_checks/Resources/Private/Language/locallang_db.xlf:sys_reaction.health_checks.checks.description',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',

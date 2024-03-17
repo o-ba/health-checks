@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Bo\HealthChecks;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Reactions\Model\ReactionInstruction;
 
 class HealthCheckReactionInstruction extends ReactionInstruction
@@ -30,6 +31,6 @@ class HealthCheckReactionInstruction extends ReactionInstruction
 
     public function getRequestedChecks(): array
     {
-        return array_filter((array)($this->record['checks'] ?? []));
+        return GeneralUtility::trimExplode(',', $this->record['checks'] ?? '', true);
     }
 }
