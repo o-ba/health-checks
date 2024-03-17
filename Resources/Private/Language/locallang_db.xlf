@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:health_checks/Resources/Private/Language/locallang_db.xlf" date="2022-08-15T20:22:32Z" product-name="health_checks">
+		<header/>
+		<body>
+			<trans-unit id="sys_reaction.health_checks.version" resname="sys_reaction.health_checks.version">
+				<source>Version</source>
+			</trans-unit>
+			<trans-unit id="sys_reaction.health_checks.service_id" resname="sys_reactions.health_checks.service_id">
+				<source>Service id</source>
+			</trans-unit>
+			<trans-unit id="sys_reaction.health_checks.checks" resname="sys_reactions.health_checks.checks">
+				<source>Checks to include in the response</source>
+			</trans-unit>
+			<trans-unit id="sys_reaction.health_checks.checks.description" resname="sys_reactions.health_checks.checks.description">
+				<source>Leave empty for adding all available checks in the response</source>
+			</trans-unit>
+			<trans-unit id="sys_reaction.paletttes.healthCheck" resname="sys_reaction.paletttes.healthCheck">
+				<source>Health check</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

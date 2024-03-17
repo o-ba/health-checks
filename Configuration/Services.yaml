@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Bo\HealthChecks\:
+    resource: '../Classes/*'
+
+  Bo\HealthChecks\HealthCheckRegistry:
+    arguments:
+      - !tagged_iterator health.check
+
+  Bo\HealthChecks\Tca\CheckItems:
+    public: true
