@@ -36,7 +36,7 @@ class UserMfaActivatedCheck extends AbstractCheck
         $mfaProviderRegistry = GeneralUtility::makeInstance(MfaProviderRegistry::class);
 
         if (
-            $mfaProviderRegistry->hasActiveProviders($backendUser)
+            !$mfaProviderRegistry->hasActiveProviders($backendUser)
             || $mfaProviderRegistry->hasLockedProviders($backendUser)
         ) {
             return new CheckResult(
@@ -52,7 +52,7 @@ class UserMfaActivatedCheck extends AbstractCheck
             'dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d' . md5((string)json_encode($user)),
             ComponentType::System,
             CheckResultStatus::Pass,
-            $backendUser->getUserName(),
+            $user['username'],
         );
     }
 }
