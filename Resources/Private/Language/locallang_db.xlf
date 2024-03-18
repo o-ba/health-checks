@@ -3,6 +3,9 @@
 	<file source-language="en" datatype="plaintext" original="EXT:health_checks/Resources/Private/Language/locallang_db.xlf" date="2022-08-15T20:22:32Z" product-name="health_checks">
 		<header/>
 		<body>
+			<trans-unit id="health_check.reaction.description" resname="health_check.reaction.description">
+				<source>Health check</source>
+			</trans-unit>
 			<trans-unit id="sys_reaction.health_checks.version" resname="sys_reaction.health_checks.version">
 				<source>Version</source>
 			</trans-unit>

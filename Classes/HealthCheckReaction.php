@@ -29,7 +29,7 @@ class HealthCheckReaction implements ReactionInterface
 
     public static function getDescription(): string
     {
-        return 'Create a health check report';
+        return 'LLL:EXT:health_checks/Resources/Private/Language/locallang_db.xlf:health_check.reaction.description';
     }
 
     public static function getIconIdentifier(): string
