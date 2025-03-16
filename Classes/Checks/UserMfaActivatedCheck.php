@@ -40,18 +40,21 @@ class UserMfaActivatedCheck extends AbstractCheck
             || $mfaProviderRegistry->hasLockedProviders($backendUser)
         ) {
             return new CheckResult(
-                'dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d' . md5((string)json_encode($user)),
-                ComponentType::System,
                 CheckResultStatus::Warn,
+                'dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d' . md5((string)json_encode($user)),
+                ComponentType::System->value,
+                new \DateTimeImmutable('now'),
                 $user['username'],
+                null,
                 'User ' . $user['username'] . ' has not activated MFA',
             );
         }
 
         return new CheckResult(
-            'dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d' . md5((string)json_encode($user)),
-            ComponentType::System,
             CheckResultStatus::Pass,
+            'dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d' . md5((string)json_encode($user)),
+            ComponentType::System->value,
+            new \DateTimeImmutable('now'),
             $user['username'],
         );
     }

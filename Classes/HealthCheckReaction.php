@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Bo\HealthChecks;
 
+use CmsHealthProject\SerializableReferenceImplementation\CheckCollection;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -43,7 +44,7 @@ class HealthCheckReaction implements ReactionInterface
 
         $healthCheck = HealthCheck::createFromReaction(
             $healthCheckReaction,
-            $this->healthCheckRegistry->getHealthChecksForReaction($healthCheckReaction)
+            new CheckCollection($this->healthCheckRegistry->getHealthChecksForReaction($healthCheckReaction))
         );
 
         return $this->responseFactory

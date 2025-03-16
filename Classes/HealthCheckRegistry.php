@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Bo\HealthChecks;
 
 use CmsHealth\Definition\CheckInterface;
+use CmsHealth\Definition\HealthCheckInterface;
+use CmsHealthProject\SerializableReferenceImplementation\Check;
 
 /**
  * Registry class for health checks
@@ -17,7 +19,7 @@ class HealthCheckRegistry
     {
         foreach ($healthChecks as $healthCheck) {
             if ($healthCheck instanceof CheckInterface) {
-                $this->healthChecks[$healthCheck->getIdentifier()] = $healthCheck;
+                $this->healthChecks[$healthCheck->getName()] = $healthCheck;
             }
         }
     }
@@ -25,7 +27,7 @@ class HealthCheckRegistry
     /**
      * Get all registered health checks
      *
-     * @return CheckInterface[]
+     * @return Check[]
      */
     public function getHealthChecks(): array
     {
@@ -35,7 +37,7 @@ class HealthCheckRegistry
     /**
      * Get all registered health checks
      *
-     * @return CheckInterface[]
+     * @return Check[]
      */
     public function getHealthChecksForReaction(HealthCheckReactionInstruction $reaction): array
     {
@@ -47,7 +49,7 @@ class HealthCheckRegistry
 
         return array_filter(
             $this->healthChecks,
-            static fn (CheckInterface $check): bool => in_array($check->getIdentifier(), $checksForReaction, true)
+            static fn (Check $check): bool => in_array($check->getName(), $checksForReaction, true)
         );
     }
 }

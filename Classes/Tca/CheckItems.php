@@ -19,8 +19,8 @@ class CheckItems
         foreach ($this->healthCheckRegistry->getHealthChecks() as $check) {
             $params['items'][] = new SelectItem(
                 'select',
-                $check->getIdentifier(),
-                $check->getIdentifier(),
+                $check->getName(),
+                $check->getName(),
             );
         }
     }

@@ -17,10 +17,12 @@ class PluginAvailableCheck extends AbstractCheck
     {
         return [
             new CheckResult(
-                'dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d3',
-                ComponentType::Component,
                 CheckResultStatus::Fail,
+                'dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d3',
+                ComponentType::Component->value,
+                new \DateTimeImmutable('now'),
                 '0',
+                null,
                 'The plugin is not available',
             )
         ];

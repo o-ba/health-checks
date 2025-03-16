@@ -18,9 +18,10 @@ class VersionCheck extends AbstractCheck
     {
         return [
             new CheckResult(
-                'dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d1',
-                ComponentType::System,
                 CheckResultStatus::Info,
+                'dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d1',
+                ComponentType::System->value,
+                new \DateTimeImmutable('now'),
                 (string)(new Typo3Version()),
             )
         ];

@@ -4,22 +4,15 @@ declare(strict_types=1);
 
 namespace Bo\HealthChecks\Checks;
 
-use CmsHealth\Definition\CheckInterface;
+use CmsHealthProject\SerializableReferenceImplementation\Check;
 
-abstract class AbstractCheck implements CheckInterface, \JsonSerializable
+abstract class AbstractCheck extends Check
 {
     protected string $componentName;
     protected string $measurementName;
 
-    public function getIdentifier(): string
+    public function __construct()
     {
-        return implode(':', [$this->componentName, $this->measurementName]);
-    }
-
-    abstract public function getCheckResults(): array;
-
-    public function jsonSerialize(): array
-    {
-        return $this->getCheckResults();
+        parent::__construct(implode(':', [$this->componentName, $this->measurementName]));
     }
 }

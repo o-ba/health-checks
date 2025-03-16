@@ -21,7 +21,7 @@
 		"typo3/cms-backend": "^12.4 ||^13.0",
 		"typo3/cms-reactions": "^12.4 || ^13.0",
 		"typo3/cms-reports": "^12.4 || ^13.0",
-		"cms-health-project/health-check-rfc": "dev-main"
+		"cms-health-project/serializable-reference-implementation": "dev-main"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-master"
